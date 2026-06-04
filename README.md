@@ -77,7 +77,7 @@ El paso final de esta segunda parte, es que puedas agregar esta funcionalidad de
 ┌─────────────────────────────────────────────────────────────────┐
 │                    CAPA DE PRESENTACIÓN                         │
 │                    Frontend - React + TypeScript                │
-│                    10.242.64.7:3000                            │
+│                    10.242.64.7:3000                             │
 │                    ✅ COMPLETADO                                │
 └────────────────────────────┬────────────────────────────────────┘
                              │ HTTP/REST
@@ -85,16 +85,16 @@ El paso final de esta segunda parte, es que puedas agregar esta funcionalidad de
 ┌─────────────────────────────────────────────────────────────────┐
 │                    CAPA DE NEGOCIO                              │
 │                    Middleware - Quarkus                         │
-│                    10.242.64.6:8080                            │
-│                    ✅ COMPLETADO                                │
+│                    10.242.64.6:8080                             │
+│                    ✅ COMPLETADO                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │ JDBC
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                    CAPA DE DATOS                                │
 │                    Backend - MySQL                              │
-│                    10.242.64.5:3306                            │
-│                    ✅ COMPLETADO                                │
+│                    10.242.64.5:3306                             │
+│                    ✅ COMPLETADO                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
