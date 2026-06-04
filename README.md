@@ -4,7 +4,7 @@
 
 Sistema completo de e-commerce implementado con arquitectura de 3 capas, utilizando tecnologías oficiales de Red Hat. 
 
-Esta solucion fue creada con IBM BOB a partir de una serie de prompts.
+Esta solucion fue creada con IBM BOB a partir de una serie de prompts. La version de BOB utilizada es la 1.0.3
 
 <img width="1648" height="831" alt="image" src="https://github.com/user-attachments/assets/0f0a2343-f40b-4aa9-a3dc-edb68a883c03" />
 
