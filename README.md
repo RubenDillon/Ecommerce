@@ -16,7 +16,7 @@ Esta solucion fue creada con IBM BOB a partir de una serie de prompts.
 
 ### Prompts usados para generar la solucion
 
-##Primer prompt
+#Primer prompt
 
 Necesito crear una aplicación desde cero. Nueva. Va a tener 3 capas que pueda hacer el manejo de compras de bienes en internet.
 
