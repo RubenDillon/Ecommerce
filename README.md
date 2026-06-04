@@ -2,7 +2,18 @@
 
 ## 📋 Resumen Ejecutivo
 
-Sistema completo de e-commerce implementado con arquitectura de 3 capas, utilizando tecnologías oficiales de Red Hat.
+Sistema completo de e-commerce implementado con arquitectura de 3 capas, utilizando tecnologías oficiales de Red Hat. 
+
+Esta solucion fue creada con IBM BOB a partir de una serie de prompts.
+
+<img width="1648" height="831" alt="image" src="https://github.com/user-attachments/assets/0f0a2343-f40b-4aa9-a3dc-edb68a883c03" />
+
+<img width="1648" height="831" alt="image" src="https://github.com/user-attachments/assets/e4553b7e-7392-4d69-88bd-c9c1259f7f28" />
+
+<img width="1648" height="831" alt="image" src="https://github.com/user-attachments/assets/ab8df380-2a7d-48f7-8313-02dcf3e29987" />
+
+<img width="1648" height="831" alt="image" src="https://github.com/user-attachments/assets/45905ca9-99ca-4867-b2b2-5dba719c15db" />
+
 
 ### Arquitectura del Sistema
 
