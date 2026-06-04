@@ -14,7 +14,7 @@ Esta solucion fue creada con IBM BOB a partir de una serie de prompts.
 
 <img width="1648" height="831" alt="image" src="https://github.com/user-attachments/assets/45905ca9-99ca-4867-b2b2-5dba719c15db" />
 
-### Prompts usados para generar la solucion
+# Prompts usados para generar la solucion
 
 ## Primer prompt
 
