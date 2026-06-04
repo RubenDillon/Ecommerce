@@ -35,19 +35,19 @@ public class ClienteResource {
         if (query == null || query.trim().isEmpty()) {
             return clienteService.findAll();
         }
-        return clienteService.search(query);
+        return clienteService.findByEmail(query);
     }
 
     @GET
     @Path("/pais/{idPais}")
     public List<ClienteDTO> getByPais(@PathParam("idPais") Long idPais) {
-        return clienteService.findByPais(idPais);
+        return clienteService.findByPaisId(idPais);
     }
 
     @GET
     @Path("/ciudad/{idCiudad}")
     public List<ClienteDTO> getByCiudad(@PathParam("idCiudad") Long idCiudad) {
-        return clienteService.findByCiudad(idCiudad);
+        return clienteService.findByCiudadId(idCiudad);
     }
 
     @POST

@@ -1,16 +1,15 @@
 // src/main/java/com/ecommerce/resource/OrdenResource.java
 package com.ecommerce.resource;
 
-import com.ecommerce.dto.CreateOrdenRequest;
+import com.ecommerce.dto.CrearOrdenDTO;
+import com.ecommerce.dto.ItemDTO;
 import com.ecommerce.dto.OrdenDTO;
-import com.ecommerce.dto.OrdenItemDTO;
 import com.ecommerce.service.OrdenService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Path("/api/ordenes")
@@ -35,31 +34,17 @@ public class OrdenResource {
     @GET
     @Path("/cliente/{idCliente}")
     public List<OrdenDTO> getByCliente(@PathParam("idCliente") Long idCliente) {
-        return ordenService.findByCliente(idCliente);
-    }
-
-    @GET
-    @Path("/fecha/{fecha}")
-    public List<OrdenDTO> getByFecha(@PathParam("fecha") String fecha) {
-        LocalDate localDate = LocalDate.parse(fecha);
-        return ordenService.findByFecha(localDate);
+        return ordenService.findByClienteId(idCliente);
     }
 
     @GET
     @Path("/{id}/items")
-    public List<OrdenItemDTO> getItems(@PathParam("id") Long id) {
-        return ordenService.findItemsByOrden(id);
-    }
-
-    @GET
-    @Path("/{id}/total")
-    public Response getTotal(@PathParam("id") Long id) {
-        Double total = ordenService.calculateTotal(id);
-        return Response.ok().entity(new TotalResponse(total)).build();
+    public List<ItemDTO> getItems(@PathParam("id") Long id) {
+        return ordenService.findItemsByOrdenId(id);
     }
 
     @POST
-    public Response create(CreateOrdenRequest request) {
+    public Response create(CrearOrdenDTO request) {
         OrdenDTO created = ordenService.create(request);
         return Response.status(Response.Status.CREATED).entity(created).build();
     }

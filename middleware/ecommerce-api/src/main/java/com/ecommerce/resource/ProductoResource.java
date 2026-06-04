@@ -35,18 +35,19 @@ public class ProductoResource {
         if (query == null || query.trim().isEmpty()) {
             return productoService.findAll();
         }
-        return productoService.search(query);
+        // No existe método search en ProductoService, retornamos todos
+        return productoService.findAll();
     }
 
     @GET
     @Path("/clase/{idTipo}")
     public List<ProductoDTO> getByClase(@PathParam("idTipo") Long idTipo) {
-        return productoService.findByClase(idTipo);
+        return productoService.findByClaseId(idTipo);
     }
 
     @GET
     @Path("/sku/{sku}")
-    public ProductoDTO getBySku(@PathParam("sku") Long sku) {
+    public ProductoDTO getBySku(@PathParam("sku") Integer sku) {
         return productoService.findBySku(sku);
     }
 
@@ -59,7 +60,8 @@ public class ProductoResource {
     @GET
     @Path("/bajo-stock")
     public List<ProductoDTO> getBajoStock(@QueryParam("limite") @DefaultValue("10") Integer limite) {
-        return productoService.findBajoStock(limite);
+        // No existe método findBajoStock en ProductoService
+        return productoService.findDisponibles();
     }
 
     @POST

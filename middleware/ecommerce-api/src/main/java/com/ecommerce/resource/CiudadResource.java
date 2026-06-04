@@ -32,7 +32,7 @@ public class CiudadResource {
     @GET
     @Path("/pais/{idPais}")
     public List<CiudadDTO> getByPais(@PathParam("idPais") Long idPais) {
-        return ciudadService.findByPais(idPais);
+        return ciudadService.findByPaisId(idPais);
     }
 
     @POST
