@@ -14,6 +14,62 @@ Esta solucion fue creada con IBM BOB a partir de una serie de prompts.
 
 <img width="1648" height="831" alt="image" src="https://github.com/user-attachments/assets/45905ca9-99ca-4867-b2b2-5dba719c15db" />
 
+### Prompts usados para generar la solucion
+
+##Primer prompt
+
+Necesito crear una aplicación desde cero. Nueva. Va a tener 3 capas que pueda hacer el manejo de compras de bienes en internet.
+
+La aplicación debe tener un backend sobre mysql, un middleware corriendo APIs en Quarkus y un front end ejecutando una app web en React. Todo lo instalado debe ser desde repositorios oficiales de Red Hat.   
+
+Voy a dividir el proceso de creacion en tres partes, una por el Backend. Otra por el middleware y la final por el frontend. Todo, debe estar comunicado entre cada parte. Esta va a ser la primer parte. 
+
+La maquina virtual que va a ser utilizada como backend tiene la IP  10.242.64.5 y es una maquina Linux con Red Hat 9. Necesito que use la ultima versión estable de MySQL y tenga una tabla clientes donde tenga como datos IDCliente (numérico y autogenerado), Nombre (50 caracteres), Direccion (50 caracteres), IdCiudad (numérico), IdPaís (numerico), Telefono (20 caracteres) y correo electrónico (50 caracteres). Quiero que IdCiudad este relacionado con una tabla donde estén las ciudades, esa tabla se llama Ciudades y tiene como campos IdCiudad (numerico y autogenerado), IdPais (numérico) y Ciudad (50 caracteres). El campo IdPais de la tabla Ciudades y de la tabla Clientes debe estar relacionado con la tabla Pais que tiene por campos IdPais (numerico y autogenerado), Nombre (50 caracteres) . Necesito que crees las tabla País con 5 países (Argentina, Chile, Uruguay, Paraguay y Brasil) y crees la tabla Ciudades con las 10 ciudades mas importantes de cada país. Al momento de crearse un cliente, el ID de Pais y el ID de Ciudad deben ser validados con las tablas Países y Ciudades. No puede borrarse un Pais o una Ciudad, mientras existan clientes con esos ID.
+
+Ademas tenemos una tabla de productos para comercializar. La tabla Productos debe tener un IdProducto (numerico y autogenerado), Nombre (50 caracteres), SKU (numerico), IDTipo (numerico), Stock (numerico), Foto (con el tipo de dato que sugieras para guardar una imagen y poder obtenerla rápidamente), Valor_costo (numerico), Valor_venta (numerico). Una siguente tabla que sea Clases (donde alojamos los tipos de bienes vendidos) donde debemos almacenar IDTipo (numerico y autogenerado), Nombre (50 caracteres). IDTipo de la tabla Clases esta relacionado con IDTipo de Productos. No puede borrarse un IDTipo, si tiene relacionado un Producto. Necesito que crees la tabla Clases con 20 tipos de bienes mas comunes (como por ejemplo Bienes electrónicos, Indumentaria, Electrodomesticos, productos de belleza…) y crees 50 productos para la tabla Productos y las imágenes las cargues de internet tomando por ejemplo para Bienes electrónicos una imagen de Playstation 5, una imagen de Nintendo Switch 2, para Indumentaria una zapatilla Nike, una zapatilla Reebok, para productos de belleza algun makeup reconocido y asi. Para los campos Valor_costo y Valor_venta, buscar precios estimados en paginas de comercio de Argentina. El precio estimado, usarlo para Valor_ venta y para estimar el Valor_costo, tomar el precio encontrado y restarle 30%.
+
+Finalmente almacenamos las ventas donde tenemos una tabla Ordenes con IDOrden (numerico y autogenerado), IDCliente (numerico), Fecha (datestamp) y una tabla Items donde tenemos IDOrden (numerico), IdProducto (numerico) y PrecioVenta (numerico). IdOrden de Items relacionado con IDOrden de Ordenes. 
+
+
+El paso final de esta primer parte, es que puedas describir la funcionalidad de la aplicación, las APIs y todo lo que normalmente se incluye en la documentacion de una solucion. Dentro de la documentacion, por ejemplo te pido incluyas diagramas de componentes, UML, diagrama de clases, pero no solo te limites a esos requerimientos en la documentacion.
+
+
+Segundo Prompt
+
+Necesito continuar con la creacion de la aplicacion de 3 capas que pueda hacer el manejo de compras de bienes en internet.
+
+La aplicación debe tener un backend sobre mysql, un middleware corriendo APIs en Quarkus y un front end ejecutando una app web en React. Todo lo instalado debe ser desde repositorios oficiales de Red Hat.   
+
+Este pedido corresponde al segunda parte. Todo, debe estar comunicado entre cada parte. 
+
+La maquina virtual que va a ser utilizada como middleware tiene la IP 10.242.64.6 y es una maquina Linux con Red Hat 9. Necesito que el desarrollo use la última versión de Open Java utilizando Quarkus. El middleware debe encargarse de resolver todo lo referente a llamadas a la base de datos utilizando APIs. Es decir, el frontend sera el punto de entrada de mis usuarios y la información que necesite, sera enviada al middleware para que a través de una API pueda resolver consultando la base de datos del backend.
+
+El middleware va a tener que resolver crear, modificar, borrar y consultar todas las tablas que ya hemos creado. Exponer distintos metodos para que pueda ser llamados por la aplicacion frontend.
+
+El paso final de esta segunda parte, es que puedas agregar esta funcionalidad de la aplicación, las APIs y todo lo que normalmente se incluye en la documentacion de una solucion a la existente que armaste en la primer etapa. Dentro de la documentacion, por ejemplo te pido incluyas diagramas de componentes, UML, diagrama de clases, pero no solo te limites a esos requerimientos en la documentacion.
+
+
+Tercer Prompt
+
+Necesito continuar con la creacion de la aplicacion de 3 capas que pueda hacer el manejo de compras de bienes en internet.
+
+La aplicación debe tener un backend sobre mysql, un middleware corriendo APIs en Quarkus y un front end ejecutando una app web en React. Todo lo instalado debe ser desde repositorios oficiales de Red Hat.   
+
+Este pedido corresponde al tercera y ultima parte. Todo, debe estar comunicado entre cada parte. 
+
+La maquina virtual que va a ser utilizada como frontend tiene la IP 10.242.64.7  y es una maquina Linux con Red Hat 9. Necesito que este desarrollado en la ultima versión del lenguaje que creas conveniente para desarrollar un frontend (de ser posible, no quiero que usemos Javascript). Quiero que esta maquina, ofrezca una aplicación web.
+
+La aplicacion web debe ofrecer un Dashboard principal desde donde se puede acceder a los items individuales (manejo de Clientes, Ciudades, Paises, Productos, Clases de Productos) y el carrito de compras. En el Dashboard deberia mostrarse informacion tal como Cantidad de clientes, Cantidad de productos, Valuacion del stock tomando el valor de compra, valuacion del stock tomando el valor de venta, el clima en estos momentos en Argentina (no usando una API ni nada que requiera una suscripcion, buscando algun lugar que se pueda identificar… temperatura actual y si esta nublado, lloviendo o soleado), la hora, etc… Toda informacion, que se pueda conseguir de forma gratuita sin requerir de una API key, token o similar con algun proveedor como weather channel o similar.
+
+Cuando accedemos a los items individuales, debemos poder crear, modificar y borrar clientes, ciudades, países, productos, Clases de Productos. La aplicacion debe tener un carrito de compras, donde el usuario puede seleccionar el cliente y los productos que desea comprar. Una vez guardada la compra, debe volver al Dashboard principal.
+
+Cuando se crea un producto, debe generar la posibilidad de que se seleccione una imagen de ejemplo de acuerdo al Tipo de producto que se ha definido. Por ejemplo, cuando se cree un producto y se seleccione como Tipo de producto un Bien electrónico, muestres una serie de imágenes obtenidas de internet como ejemplo, para ese caso podria ser un smartphone, una consola de juegos, una notebook, auriculares… deberia poder traer unas 10 imágenes para que se pueda seleccionar una y ponerla en la informacion del Producto que se esta creando. A su vez, la posibilidad de hacer un upload de una imagen desde el dispositivo que el usuario esta usando (una computadora, un smartphone) para acceder a la aplicacion web. 
+
+El proceso del carrito de compras, debe ser de la siguiente manera. Primero seleccionar un usuario, con la posibilidad de crear un usuario nuevo. Una vez seleccionado el usuario, debe poder agregarse los productos que se han comprado. Cuando se selecciona un producto, debe poder verse la foto que tiene el producto almacenado en la base de datos, debe poder verse el precio del producto (que esta en la tabla de la base de datos) y debe poder mostrarse, cuanto sale ese producto en forma general (informacion obtenida con acceso a paginas publicas sin necesidad de tener una API Key o similar) como precio de referencia. Una vez que el usuario agrega todos los productos que desee, debe tener un boton de cerrar la compra y finalmente, vuelve al Dashboard principal. Los datos ingresados en la compra, van a la tabla Ordenes e Items.
+
+El paso final de esta segunda parte, es que puedas agregar esta funcionalidad de la aplicación, las APIs y todo lo que normalmente se incluye en la documentacion de una solucion a la existente que armaste en la primer etapa. Dentro de la documentacion, por ejemplo te pido incluyas diagramas de componentes, UML, diagrama de clases, pero no solo te limites a esos requerimientos en la documentacion.
+
+
 
 ### Arquitectura del Sistema
 
