@@ -1,15 +1,52 @@
+// src/main/java/com/ecommerce/dto/CiudadDTO.java
 package com.ecommerce.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class CiudadDTO {
     private Long idCiudad;
-    private String ciudad;
     private Long idPais;
-    private String nombrePais;
+    private String ciudad;
+    private PaisDTO pais;
+
+    // Constructors
+    public CiudadDTO() {
+    }
+
+    public CiudadDTO(Long idCiudad, Long idPais, String ciudad) {
+        this.idCiudad = idCiudad;
+        this.idPais = idPais;
+        this.ciudad = ciudad;
+    }
+
+    // Getters and Setters
+    public Long getIdCiudad() {
+        return idCiudad;
+    }
+
+    public void setIdCiudad(Long idCiudad) {
+        this.idCiudad = idCiudad;
+    }
+
+    public Long getIdPais() {
+        return idPais;
+    }
+
+    public void setIdPais(Long idPais) {
+        this.idPais = idPais;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public PaisDTO getPais() {
+        return pais;
+    }
+
+    public void setPais(PaisDTO pais) {
+        this.pais = pais;
+    }
 }
