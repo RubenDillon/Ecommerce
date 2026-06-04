@@ -16,7 +16,7 @@ Esta solucion fue creada con IBM BOB a partir de una serie de prompts.
 
 ### Prompts usados para generar la solucion
 
-#Primer prompt
+## Primer prompt
 
 Necesito crear una aplicación desde cero. Nueva. Va a tener 3 capas que pueda hacer el manejo de compras de bienes en internet.
 
@@ -34,7 +34,7 @@ Finalmente almacenamos las ventas donde tenemos una tabla Ordenes con IDOrden (n
 El paso final de esta primer parte, es que puedas describir la funcionalidad de la aplicación, las APIs y todo lo que normalmente se incluye en la documentacion de una solucion. Dentro de la documentacion, por ejemplo te pido incluyas diagramas de componentes, UML, diagrama de clases, pero no solo te limites a esos requerimientos en la documentacion.
 
 
-Segundo Prompt
+## Segundo Prompt
 
 Necesito continuar con la creacion de la aplicacion de 3 capas que pueda hacer el manejo de compras de bienes en internet.
 
@@ -49,7 +49,7 @@ El middleware va a tener que resolver crear, modificar, borrar y consultar todas
 El paso final de esta segunda parte, es que puedas agregar esta funcionalidad de la aplicación, las APIs y todo lo que normalmente se incluye en la documentacion de una solucion a la existente que armaste en la primer etapa. Dentro de la documentacion, por ejemplo te pido incluyas diagramas de componentes, UML, diagrama de clases, pero no solo te limites a esos requerimientos en la documentacion.
 
 
-Tercer Prompt
+## Tercer Prompt
 
 Necesito continuar con la creacion de la aplicacion de 3 capas que pueda hacer el manejo de compras de bienes en internet.
 
