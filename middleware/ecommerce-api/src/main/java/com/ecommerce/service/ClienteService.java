@@ -51,6 +51,10 @@ public class ClienteService {
         return clienteMapper.toDTOList(clienteRepository.findByPaisId(idPais));
     }
     
+    public List<ClienteDTO> findByCiudadId(Long idCiudad) {
+        return clienteMapper.toDTOList(clienteRepository.findByCiudadId(idCiudad));
+    }
+    
     @Transactional
     public ClienteDTO create(ClienteDTO dto) {
         if (dto.getEmail() != null && clienteRepository.existsByEmail(dto.getEmail())) {

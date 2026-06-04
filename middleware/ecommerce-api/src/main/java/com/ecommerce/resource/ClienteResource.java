@@ -31,11 +31,16 @@ public class ClienteResource {
 
     @GET
     @Path("/search")
-    public List<ClienteDTO> search(@QueryParam("q") String query) {
+    public Response search(@QueryParam("q") String query) {
         if (query == null || query.trim().isEmpty()) {
-            return clienteService.findAll();
+            return Response.ok(clienteService.findAll()).build();
         }
-        return clienteService.findByEmail(query);
+        try {
+            ClienteDTO cliente = clienteService.findByEmail(query);
+            return Response.ok(cliente).build();
+        } catch (Exception e) {
+            return Response.ok(java.util.Collections.emptyList()).build();
+        }
     }
 
     @GET
