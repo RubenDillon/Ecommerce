@@ -71,7 +71,7 @@ El paso final de esta segunda parte, es que puedas agregar esta funcionalidad de
 
 
 
-### Arquitectura del Sistema
+# Arquitectura del Sistema
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
